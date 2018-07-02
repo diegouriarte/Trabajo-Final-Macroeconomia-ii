@@ -277,7 +277,22 @@ fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Correlation with TB/Y:',o
 verbatim;
     [data_mat,data_header]=xlsread('data_argentina.xls',1,'G2:J107');
     %sqrt(0.06*var(data_mat)); prior bounds
-    figure('Name','Figure 4: Autocorrelation Function')
+    figure('Name','Figure 4: Autocorrelation Function - Argentina')
+    tby_data=data_mat(:,strcmp('tb_y',data_header));
+    plot((1:4),[corr(tby_data(2:end-3),tby_data(1:end-4)),corr(tby_data(3:end-2),tby_data(1:end-4)),corr(tby_data(4:end-1),tby_data(1:end-4)),corr(tby_data(5:end),tby_data(1:end-4))],'b-')
+    hold on
+    tb_pos=strmatch('tb_y',var_list_,'exact');
+    plot((1:4),[oo_.autocorr{1,1}(tb_pos,tb_pos) oo_.autocorr{1,2}(tb_pos,tb_pos) oo_.autocorr{1,3}(tb_pos,tb_pos) oo_.autocorr{1,4}(tb_pos,tb_pos)],'r-.')
+    xlabel('Lags')
+    legend('Data','Model')
+end;
+
+
+// Generate part of Figure 5 for Peru 
+verbatim;
+    [data_mat,data_header]=xlsread('data_peru_trimestral.xls',1,'G2:J154');
+    %sqrt(0.06*var(data_mat)); prior bounds
+    figure('Name','Figure 5: Autocorrelation Function - Peru')
     tby_data=data_mat(:,strcmp('tb_y',data_header));
     plot((1:4),[corr(tby_data(2:end-3),tby_data(1:end-4)),corr(tby_data(3:end-2),tby_data(1:end-4)),corr(tby_data(4:end-1),tby_data(1:end-4)),corr(tby_data(5:end),tby_data(1:end-4))],'b-')
     hold on
