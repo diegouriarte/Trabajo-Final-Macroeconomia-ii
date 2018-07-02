@@ -81,24 +81,24 @@ var c       $c$ %consumo
 predetermined_variables k d;
 
 %Define parameters
-parameters beta     ${\beta}$ 
-        gamma       ${\gamma}$ 
-        delta       ${\delta}$
-        alpha       ${\alpha}$
-        psi         ${\psi}$
-        omega       ${\omega}$
-        theta       ${\theta}$
-        phi         ${\phi}$
-        dbar        ${\bar d}$
-        gbar        ${\bar g}$
-        rho_a       ${\rho_a}$
-        rho_g       ${\rho_g}$
-        rho_nu      ${\rho_\nu}$
-        rho_mu      ${\rho_\mu}$
-        rho_s       ${\rho_s}$
+parameters beta     ${\beta}$ %factor de descuento intertemporal
+        gamma       ${\gamma}$ %parametro de aversión al riesgo en la 'CRRA' de la utilidad de los hogares
+        delta       ${\delta}$ %depreciación
+        alpha       ${\alpha}$ %parámetro de la cobb-douglas, participación del capital en el producto
+        psi         ${\psi}$ %parametro del debt-elastic interest-rate premium
+        omega       ${\omega}$ %exponente of labor in utility function - labor supply elasticity = 1/(omega-1)
+        theta       ${\theta}$ %parámetro que pondera tiempo dedicado al trabajo 
+        phi         ${\phi}$ %parámetro de ajuste de costos, 
+        dbar        ${\bar d}$ %nivel de deuda del resto de la economía
+        gbar        ${\bar g}$ %Gross growth rate of output
+        rho_a       ${\rho_a}$ %parámetro del shock de productividad
+        rho_g       ${\rho_g}$ %parámetro de los choques al ln de la tasa de crecimiento g
+        rho_nu      ${\rho_\nu}$ %parámetro del choque de preferencias 
+        rho_mu      ${\rho_\mu}$ %parámetro del choque al country premium
+        rho_s       ${\rho_s}$ %parámetro del chqoue al gasto público
     @#if RBC == 0
-        s_share     ${sshare}$
-        S           ${S}$
+        s_share     ${sshare}$ %Share of public spending in GDP
+        S           ${S}$ %y*s_share: total del gasto publico en el periodo
     @# endif
 ;
 
