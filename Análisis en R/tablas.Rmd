@@ -1,0 +1,72 @@
+---
+title: "Pregunta 1"
+author: "Diego Uriarte"
+date: "28 de junio de 2018"
+output: 
+  pdf_document:
+    keep_tex: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(kableExtra)
+library(readr)
+locale("es")
+```
+
+Cargamos el archivo
+```{r message=FALSE, results='hide'}
+file_location <- "../Eviews/tabla_latex_1980q1_2005q3.csv"
+data <- read_csv(file_location, skip = 1, locale = locale(encoding = 'Windows-1252'))
+colnames(data)[2] <- ""
+colnames(data)[1] <- ""
+head(data)
+```
+
+
+
+Generamos la tabla que replica la tabla 7 del paper
+
+```{r datos_1980_2005, message=FALSE, echo = FALSE}
+kable(data, "latex", booktabs = T, caption = "Comportamiento de los componentes del ciclo: 1980.I - 2005.III ") %>%
+  kable_styling(latex_options = c("striped", "scale_down")) %>%
+  add_header_above(c("Variables" = 1, "Volatilidad Relativa" = 1, "Correlaciones cruzadas del PBI real con" = 11), bold = T)
+```
+
+Actualizamos los hechos estilizados tomando toda la data disponible
+
+```{r, message=FALSE, results='hide'}
+file_location <- "../Eviews/tabla_latex_1980q1_2018q1.csv"
+data <- read_csv(file_location, skip = 1, locale = locale(encoding = 'Windows-1252'))
+colnames(data)[2] <- ""
+colnames(data)[1] <- ""
+head(data)
+```
+
+
+
+
+```{r datos_1980_2018, message=FALSE, echo=FALSE}
+kable(data, "latex", booktabs = T, caption = "Comportamiento de los componentes del ciclo: 1980.I - 2018.I ") %>%
+  kable_styling(latex_options = c("striped", "scale_down")) %>%
+  add_header_above(c("Variables" = 1, "Volatilidad Relativa" = 1, "Correlaciones cruzadas del PBI real con" = 11), bold = T)
+```
+
+Ahora solo desde 1994:
+
+```{r, message=FALSE, echo=FALSE, results='hide'}
+file_location <- "../Eviews/tabla_latex_1994q1_2018q1.csv"
+data <- read_csv(file_location, skip = 1, locale = locale(encoding = 'Windows-1252'))
+colnames(data)[2] <- ""
+colnames(data)[1] <- ""
+head(data)
+```
+
+
+
+
+```{r datos_1994_2018, message=FALSE, echo=FALSE}
+kable(data, "latex", booktabs = T, caption = "Comportamiento de los componentes del ciclo: 1994.I - 2018.I ") %>%
+  kable_styling(latex_options = c("striped", "scale_down")) %>%
+  add_header_above(c("Variables" = 1, "Volatilidad Relativa" = 1, "Correlaciones cruzadas del PBI real con" = 11), bold = T)
+```

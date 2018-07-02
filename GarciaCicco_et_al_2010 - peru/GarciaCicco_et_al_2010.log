@@ -1,0 +1,109 @@
+Starting Dynare (version 4.5.4).
+Starting preprocessing of the model file ...
+WARNING: in the 'steady_state_model' block, variable 'tb' is declared twice
+WARNING: in the 'steady_state_model' block, variable 'tb_y' is declared twice
+Found 18 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...
+done
+Preprocessing completed.
+[Warning: Some of the parameters have no value (S) when using stoch_simul. If these parameters are not initialized in a steadystate
+file or a steady_state_model-block, Dynare may not be able to solve the model...] 
+
+MODEL SUMMARY
+
+  Number of variables:         18
+  Number of stochastic shocks: 5
+  Number of state variables:   10
+  Number of jumpers:           5
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables       eps_a     eps_g    eps_nu    eps_mu     eps_s
+eps_a        0.001093  0.000000  0.000000  0.000000  0.000000
+eps_g        0.000000  0.000112  0.000000  0.000000  0.000000
+eps_nu       0.000000  0.000000  0.290628  0.000000  0.000000
+eps_mu       0.000000  0.000000  0.000000  0.003271  0.000000
+eps_s        0.000000  0.000000  0.000000  0.000000  0.000355
+
+POLICY AND TRANSITION FUNCTIONS
+                                 g_y             g_c        g_invest            tb_y               y               c               r
+Constant                    0.009842        0.009842        0.009842        0.002867       -1.552908       -1.895749        0.100495
+c(-1)                              0       -1.000000               0               0               0               0               0
+d(-1)                              0       -0.011566       -0.047922        0.017189               0       -0.011566        0.018151
+y(-1)                      -1.000000               0               0               0               0               0               0
+invest(-1)                         0               0       -1.000000               0               0               0               0
+mu(-1)                             0       -0.276835       -1.936564        0.559362               0       -0.276835        0.820103
+nu(-1)                             0        0.072159       -0.129441       -0.026960               0        0.072159               0
+s(-1)                              0       -0.006665       -0.019656       -0.012090               0       -0.006665               0
+k(-1)                       0.556522        0.587265        0.515649        0.041491        0.556522        0.587265               0
+a(-1)                       1.503603        1.547354        1.793248        0.065034        1.503603        1.547354               0
+g(-1)                       1.382016        1.355224        1.408437        0.052266        0.382016        0.355224               0
+eps_a                       1.739130        1.789735        2.074145        0.075221        1.739130        1.789735               0
+eps_g                       1.182609        1.099671        1.264402        0.161799        1.182609        1.099671               0
+eps_nu                             0        0.084860       -0.152224       -0.031706               0        0.084860               0
+eps_mu                             0       -0.305287       -2.135595        0.616850               0       -0.305287        0.904389
+eps_s                              0       -0.032505       -0.095868       -0.058966               0       -0.032505               0
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+g_y            0.0098     0.0624     0.0039
+g_c            0.0098     0.0852     0.0073
+g_invest       0.0098     0.1784     0.0318
+tb_y           0.0029     0.0503     0.0025
+y             -1.5529     0.2914     0.0849
+c             -1.8957     0.3145     0.0989
+r              0.1005     0.0807     0.0065
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+             eps_a   eps_g  eps_nu  eps_mu   eps_s
+g_y          86.73    4.23    6.22    2.82    0.00
+g_c          49.18    1.91   44.06    4.84    0.01
+g_invest     15.07    0.58   23.52   60.83    0.01
+tb_y          0.95    0.23   20.64   78.11    0.07
+y            48.07    0.66   49.72    1.54    0.00
+c            49.14    0.63   49.42    0.80    0.01
+r             4.21    0.09   39.93   55.75    0.01
+
+
+
+MATRIX OF CORRELATIONS
+Variables         g_y       g_c  g_invest      tb_y         y         c         r
+g_y            1.0000    0.7646    0.3333   -0.0151    0.1103    0.0666   -0.1254
+g_c            0.7646    1.0000    0.2320   -0.3011    0.1154    0.1373   -0.2428
+g_invest       0.3333    0.2320    1.0000   -0.2096   -0.0407   -0.0809   -0.2574
+tb_y          -0.0151   -0.3011   -0.2096    1.0000   -0.1642   -0.2885    0.6938
+y              0.1103    0.1154   -0.0407   -0.1642    1.0000    0.9711   -0.5247
+c              0.0666    0.1373   -0.0809   -0.2885    0.9711    1.0000   -0.4931
+r             -0.1254   -0.2428   -0.2574    0.6938   -0.5247   -0.4931    1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order            1       2       3       4       5
+g_y         0.0382  0.0341  0.0260  0.0179  0.0109
+g_c        -0.0175 -0.0124 -0.0107 -0.0104 -0.0106
+g_invest   -0.0732 -0.0486 -0.0345 -0.0262 -0.0212
+tb_y        0.5157  0.2655  0.1365  0.0704  0.0369
+y           0.9760  0.9512  0.9252  0.8981  0.8704
+c           0.9625  0.9271  0.8928  0.8593  0.8267
+r           0.7175  0.5557  0.4583  0.3959  0.3530
+                               	   g_y   	   g_c   	 g_inv   	  TB/Y   
+          Standard Deviations: 	 6.2378 	 8.5158 	 17.8438 	 5.0296 
+                  2.913904e+01 	 31.4519 	 8.0721 	          Correlation with g_y: 	 1.0000 	 0.7646 	 0.3333 	 -0.0151 
+                  1.102736e-01 	 0.0666 	 -0.1254 	         First Order Autocorr.: 	 0.0382 	 -0.0175 	 -0.0732 	 0.5157 
+                  9.760001e-01 	 0.9625 	 0.7175 	        Second Order Autocorr.: 	 0.0341 	 -0.0124 	 -0.0486 	 0.2655 
+                  9.511890e-01 	 0.9271 	 0.5557 	         Third Order Autocorr.: 	 0.0260 	 -0.0107 	 -0.0345 	 0.1365 
+                  9.251798e-01 	 0.8928 	 0.4583 	        Fourth Order Autocorr.: 	 0.0179 	 -0.0104 	 -0.0262 	 0.0704 
+                  8.981402e-01 	 0.8593 	 0.3959 	         Correlation with TB/Y: 	 -0.0151 	 -0.3011 	 -0.2096 	 1.0000 
+                 -1.641933e-01 	 -0.2885 	 0.6938 	 Total computing time : 0h00m06s
+Note: 2 warning(s) encountered in the preprocessor
+Note: warning(s) encountered in MATLAB/Octave code
