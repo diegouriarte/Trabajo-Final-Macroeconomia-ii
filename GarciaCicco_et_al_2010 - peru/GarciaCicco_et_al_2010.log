@@ -1,0 +1,237 @@
+Starting Dynare (version 4.5.4).
+Starting preprocessing of the model file ...
+WARNING: in the 'steady_state_model' block, variable 'tb' is declared twice
+WARNING: in the 'steady_state_model' block, variable 'tb_y' is declared twice
+Found 18 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...
+done
+Preprocessing completed.
+[Warning: Some of the parameters have no value (S) when using stoch_simul. If these parameters are not initialized in a steadystate
+file or a steady_state_model-block, Dynare may not be able to solve the model...] 
+
+MODEL SUMMARY
+
+  Number of variables:         18
+  Number of stochastic shocks: 5
+  Number of state variables:   10
+  Number of jumpers:           5
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables       eps_a     eps_g    eps_nu    eps_mu     eps_s
+eps_a        0.001093  0.000000  0.000000  0.000000  0.000000
+eps_g        0.000000  0.000112  0.000000  0.000000  0.000000
+eps_nu       0.000000  0.000000  0.290628  0.000000  0.000000
+eps_mu       0.000000  0.000000  0.000000  0.003271  0.000000
+eps_s        0.000000  0.000000  0.000000  0.000000  0.000355
+
+POLICY AND TRANSITION FUNCTIONS
+                                 g_y             g_c        g_invest            tb_y               y               c               r
+Constant                    0.009842        0.009842        0.009842        0.002867       -1.552908       -1.895749        0.100495
+c(-1)                              0       -1.000000               0               0               0               0               0
+d(-1)                              0       -0.011566       -0.047922        0.017189               0       -0.011566        0.018151
+y(-1)                      -1.000000               0               0               0               0               0               0
+invest(-1)                         0               0       -1.000000               0               0               0               0
+mu(-1)                             0       -0.276835       -1.936564        0.559362               0       -0.276835        0.820103
+nu(-1)                             0        0.072159       -0.129441       -0.026960               0        0.072159               0
+s(-1)                              0       -0.006665       -0.019656       -0.012090               0       -0.006665               0
+k(-1)                       0.556522        0.587265        0.515649        0.041491        0.556522        0.587265               0
+a(-1)                       1.503603        1.547354        1.793248        0.065034        1.503603        1.547354               0
+g(-1)                       1.382016        1.355224        1.408437        0.052266        0.382016        0.355224               0
+eps_a                       1.739130        1.789735        2.074145        0.075221        1.739130        1.789735               0
+eps_g                       1.182609        1.099671        1.264402        0.161799        1.182609        1.099671               0
+eps_nu                             0        0.084860       -0.152224       -0.031706               0        0.084860               0
+eps_mu                             0       -0.305287       -2.135595        0.616850               0       -0.305287        0.904389
+eps_s                              0       -0.032505       -0.095868       -0.058966               0       -0.032505               0
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+g_y            0.0098     0.0624     0.0039
+g_c            0.0098     0.0852     0.0073
+g_invest       0.0098     0.1784     0.0318
+tb_y           0.0029     0.0503     0.0025
+y             -1.5529     0.2914     0.0849
+c             -1.8957     0.3145     0.0989
+r              0.1005     0.0807     0.0065
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+             eps_a   eps_g  eps_nu  eps_mu   eps_s
+g_y          86.73    4.23    6.22    2.82    0.00
+g_c          49.18    1.91   44.06    4.84    0.01
+g_invest     15.07    0.58   23.52   60.83    0.01
+tb_y          0.95    0.23   20.64   78.11    0.07
+y            48.07    0.66   49.72    1.54    0.00
+c            49.14    0.63   49.42    0.80    0.01
+r             4.21    0.09   39.93   55.75    0.01
+
+
+
+MATRIX OF CORRELATIONS
+Variables         g_y       g_c  g_invest      tb_y         y         c         r
+g_y            1.0000    0.7646    0.3333   -0.0151    0.1103    0.0666   -0.1254
+g_c            0.7646    1.0000    0.2320   -0.3011    0.1154    0.1373   -0.2428
+g_invest       0.3333    0.2320    1.0000   -0.2096   -0.0407   -0.0809   -0.2574
+tb_y          -0.0151   -0.3011   -0.2096    1.0000   -0.1642   -0.2885    0.6938
+y              0.1103    0.1154   -0.0407   -0.1642    1.0000    0.9711   -0.5247
+c              0.0666    0.1373   -0.0809   -0.2885    0.9711    1.0000   -0.4931
+r             -0.1254   -0.2428   -0.2574    0.6938   -0.5247   -0.4931    1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order            1       2       3       4       5
+g_y         0.0382  0.0341  0.0260  0.0179  0.0109
+g_c        -0.0175 -0.0124 -0.0107 -0.0104 -0.0106
+g_invest   -0.0732 -0.0486 -0.0345 -0.0262 -0.0212
+tb_y        0.5157  0.2655  0.1365  0.0704  0.0369
+y           0.9760  0.9512  0.9252  0.8981  0.8704
+c           0.9625  0.9271  0.8928  0.8593  0.8267
+r           0.7175  0.5557  0.4583  0.3959  0.3530
+                               	   g_y   	   g_c   	 g_inv   	  TB/Y   
+          Standard Deviations: 	 6.2378 	 8.5158 	 17.8438 	 5.0296 
+                  2.913904e+01 	 31.4519 	 8.0721 	          Correlation with g_y: 	 1.0000 	 0.7646 	 0.3333 	 -0.0151 
+                  1.102736e-01 	 0.0666 	 -0.1254 	         First Order Autocorr.: 	 0.0382 	 -0.0175 	 -0.0732 	 0.5157 
+                  9.760001e-01 	 0.9625 	 0.7175 	        Second Order Autocorr.: 	 0.0341 	 -0.0124 	 -0.0486 	 0.2655 
+                  9.511890e-01 	 0.9271 	 0.5557 	         Third Order Autocorr.: 	 0.0260 	 -0.0107 	 -0.0345 	 0.1365 
+                  9.251798e-01 	 0.8928 	 0.4583 	        Fourth Order Autocorr.: 	 0.0179 	 -0.0104 	 -0.0262 	 0.0704 
+                  8.981402e-01 	 0.8593 	 0.3959 	         Correlation with TB/Y: 	 -0.0151 	 -0.3011 	 -0.2096 	 1.0000 
+                 -1.641933e-01 	 -0.2885 	 0.6938 	                                	   g_y   	   g_c   	 g_inv   	  TB/Y   
+           Non-stationary TFP: 	 4.2341 	 1.9117 	 0.5756 	 0.2313 
+               Stationary TFP: 	 86.7284 	 49.1776 	 15.0686 	 0.9546 
+                   Preference: 	 6.2195 	 44.0629 	 23.5150 	 20.6384 
+              Country Premium: 	 2.8165 	 4.8424 	 60.8277 	 78.1099 
+                 Ex. Spending: 	 0.0014 	 0.0054 	 0.0131 	 0.0658 
+Initial value of the log posterior (or likelihood): 854.3406
+
+==========================================================
+   Change in the posterior covariance matrix = 5.0624.
+   Change in the posterior mean = 2.7549.
+   Mode improvement = 380.8762
+   New value of jscale = 0.0059278
+==========================================================
+
+==========================================================
+   Change in the posterior covariance matrix = 0.17994.
+   Change in the posterior mean = 2.0831.
+   Mode improvement = 21.6971
+   New value of jscale = 0.049746
+==========================================================
+
+==========================================================
+   Change in the posterior covariance matrix = 11.0145.
+   Change in the posterior mean = 2.9178.
+   Mode improvement = 73.5232
+   New value of jscale = 0.017158
+==========================================================
+
+Optimal value of the scale parameter = 0.017158
+
+
+Final value of minus the log posterior (or likelihood):-1287.042931 
+
+MODE CHECK
+
+Fval obtained by the minimization routine (minus the posterior/likelihood)): -1287.042931
+
+RESULTS FROM POSTERIOR ESTIMATION
+parameters
+       prior mean     mode    s.d. prior pstdev
+
+gbar       1.015   1.0029  0.0018 unif  0.0087 
+rho_g      0.000  -0.0811  0.1803 unif  0.5716 
+rho_a      0.000   0.1456  0.2359 unif  0.5716 
+phi        4.000   0.1582  3.3325 unif  2.3094 
+rho_nu     0.000   0.9515  0.0165 unif  0.5716 
+rho_s      0.000   0.7933  0.1747 unif  0.5716 
+rho_mu     0.000   0.9813  0.0054 unif  0.5716 
+psi        2.500   0.0201  0.7859 unif  1.4434 
+
+standard deviation of shocks
+       prior mean     mode    s.d. prior pstdev
+
+eps_g      0.100   0.0155  0.0033 unif  0.0577 
+eps_a      0.100   0.0000  0.0015 unif  0.0577 
+eps_nu     0.500   0.1535  0.0317 unif  0.2887 
+eps_s      0.100   0.1339  0.0189 unif  0.0577 
+eps_mu     0.100   0.0000  0.0084 unif  0.0577 
+
+standard deviation of measurement errors
+       prior mean     mode    s.d. prior pstdev
+
+g_y        0.185   0.0219  0.0041 unif  0.1012 
+g_c        0.223   0.0241  0.0026 unif  0.1229 
+g_invest   0.362   0.0200  0.0081 unif  0.2033 
+tb_y       0.185   0.0121  0.0017 unif  0.1012 
+
+
+Log data density [Laplace approximation] is 1225.671125.
+
+Estimation::mcmc: One Chain mode.
+Estimation::mcmc: Initialization at the posterior mode.
+
+Estimation::mcmc: Write details about the MCMC... Ok!
+Estimation::mcmc: Details about the MCMC are available in GarciaCicco_et_al_2010/metropolis\GarciaCicco_et_al_2010_mh_history_0.mat
+
+
+Estimation::mcmc: Number of mh files: 1 per block.
+Estimation::mcmc: Total number of generated files: 1.
+Estimation::mcmc: Total number of iterations: 100000.
+Estimation::mcmc: Current acceptance ratio per chain: 
+                                                       Chain  1: 33.532%
+Estimation::mcmc: Total number of MH draws per chain: 100000.
+Estimation::mcmc: Total number of generated MH files: 1.
+Estimation::mcmc: I'll use mh-files 1 to 1.
+Estimation::mcmc: In MH-file number 1 I'll start at line 50001.
+Estimation::mcmc: Finally I keep 50000 draws per chain.
+
+
+
+MCMC Inefficiency factors per block
+Parameter              Block 1
+SE_eps_g               674.693
+SE_eps_a               672.703
+SE_eps_nu              733.713
+SE_eps_s               704.132
+SE_eps_mu              269.314
+SE_EOBS_g_y            724.348
+SE_EOBS_g_c            716.116
+SE_EOBS_g_invest       723.737
+SE_EOBS_tb_y           713.907
+gbar                   736.867
+rho_g                  661.136
+rho_a                  735.896
+phi                    515.481
+rho_nu                 697.323
+rho_s                  721.280
+rho_mu                 721.692
+psi                    288.653
+
+
+Geweke (1992) Convergence Tests, based on means of draws 50000 to 60000 vs 75000 to 100000.
+p-values are for Chi2-test for equality of means.
+Parameter                Post. Mean        Post. Std   p-val No Taper   p-val 4% Taper   p-val 8% Taper  p-val 15% Taper
+SE_eps_g                      0.015            0.001            0.000            0.000            0.000            0.000
+SE_eps_a                      0.001            0.000            0.000            0.108            0.220            0.301
+SE_eps_nu                     0.187            0.033            0.000            0.000            0.000            0.000
+SE_eps_s                      0.147            0.018            0.000            0.326            0.468            0.564
+SE_eps_mu                     0.000            0.000            0.000            0.041            0.104            0.161
+SE_EOBS_g_y                   0.021            0.002            0.000            0.000            0.000            0.000
+SE_EOBS_g_c                   0.025            0.001            0.000            0.000            0.002            0.019
+SE_EOBS_g_invest              0.023            0.004            0.000            0.004            0.035            0.103
+SE_EOBS_tb_y                  0.012            0.001            0.000            0.000            0.000            0.000
+gbar                          1.003            0.002            0.000            0.000            0.000            0.000
+rho_g                        -0.066            0.039            0.000            0.000            0.000            0.000
+rho_a                         0.208            0.279            0.000            0.000            0.000            0.000
+phi                           0.202            0.062            0.000            0.000            0.000            0.000
+rho_nu                        0.960            0.016            0.000            0.000            0.000            0.000
+rho_s                         0.797            0.066            0.000            0.826            0.870            0.898
+rho_mu                        0.974            0.005            0.000            0.002           
