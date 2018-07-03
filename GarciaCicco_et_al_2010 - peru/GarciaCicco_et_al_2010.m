@@ -214,11 +214,11 @@ M_.params = NaN(17, 1);
 M_.NNZDerivatives = [76; -1; -1];
 M_.params( 10 ) = 1.001;
 gbar = M_.params( 10 );
-M_.params( 12 ) = 0.323027844166870;
+M_.params( 12 ) = 0.223027844166870;
 rho_g = M_.params( 12 );
-M_.params( 11 ) = 0.864571930755821;
+M_.params( 11 ) = 0.8688;
 rho_a = M_.params( 11 );
-M_.params( 8 ) = 4.810804146604144;
+M_.params( 8 ) = 3;
 phi = M_.params( 8 );
 M_.params( 13 ) = 0.850328786147732;
 rho_nu = M_.params( 13 );
@@ -256,7 +256,7 @@ M_.Sigma_e(5, 5) = (0.018834174505537)^2;
 options_.irf = 40;
 options_.loglinear = 1;
 options_.order = 1;
-var_list_ = char('g_y','g_c','g_invest','tb_y','y','c','r');
+var_list_ = char('g_y','g_c','g_invest','tb_y');
 info = stoch_simul(var_list_);
 fprintf('%30s \t %5s   \t %5s   \t %5s   \t %5s   \n',' ','g_y','g_c','g_inv','TB/Y')
 fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Standard Deviations:',sqrt(diag(oo_.var))*100)
@@ -276,12 +276,6 @@ fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Correlation with TB/Y:',o
     plot((1:4),[oo_.autocorr{1,1}(tb_pos,tb_pos) oo_.autocorr{1,2}(tb_pos,tb_pos) oo_.autocorr{1,3}(tb_pos,tb_pos) oo_.autocorr{1,4}(tb_pos,tb_pos)],'r-.')
     xlabel('Lags')
     legend('Data','Model')
-fprintf('%30s \t %5s   \t %5s   \t %5s   \t %5s   \n',' ','g_y','g_c','g_inv','TB/Y')
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Non-stationary TFP:',[oo_.variance_decomposition(strmatch('g_y',var_list_,'exact'),strmatch('eps_g',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_c',var_list_,'exact'),strmatch('eps_g',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_invest',var_list_,'exact'),strmatch('eps_g',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('tb_y',var_list_,'exact'),strmatch('eps_g',M_.exo_names,'exact'))])
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Stationary TFP:',[oo_.variance_decomposition(strmatch('g_y',var_list_,'exact'),strmatch('eps_a',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_c',var_list_,'exact'),strmatch('eps_a',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_invest',var_list_,'exact'),strmatch('eps_a',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('tb_y',var_list_,'exact'),strmatch('eps_a',M_.exo_names,'exact'))])
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Preference:',[oo_.variance_decomposition(strmatch('g_y',var_list_,'exact'),strmatch('eps_nu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_c',var_list_,'exact'),strmatch('eps_nu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_invest',var_list_,'exact'),strmatch('eps_nu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('tb_y',var_list_,'exact'),strmatch('eps_nu',M_.exo_names,'exact'))])
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Country Premium:',[oo_.variance_decomposition(strmatch('g_y',var_list_,'exact'),strmatch('eps_mu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_c',var_list_,'exact'),strmatch('eps_mu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_invest',var_list_,'exact'),strmatch('eps_mu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('tb_y',var_list_,'exact'),strmatch('eps_mu',M_.exo_names,'exact'))])
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Ex. Spending:',[oo_.variance_decomposition(strmatch('g_y',var_list_,'exact'),strmatch('eps_s',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_c',var_list_,'exact'),strmatch('eps_s',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_invest',var_list_,'exact'),strmatch('eps_s',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('tb_y',var_list_,'exact'),strmatch('eps_s',M_.exo_names,'exact'))])    
 save('GarciaCicco_et_al_2010_results.mat', 'oo_', 'M_', 'options_');
 if exist('estim_params_', 'var') == 1
   save('GarciaCicco_et_al_2010_results.mat', 'estim_params_', '-append');
