@@ -118,7 +118,7 @@ varexo eps_a ${\varepsilon_a}$
     rho_a = 0.7650; %Serial correlation of transitory technology shock
     phi   = 3.3000; %Adjustment cost parameter
 @# else
-    gbar  = 1.009890776104921;
+    gbar  = 1.001;
     rho_g = 0.323027844166870;
     rho_a = 0.864571930755821;
     phi   = 4.810804146604144;
@@ -290,7 +290,7 @@ fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Correlation with TB/Y:',o
 
 // Generate part of Figure 5 for Peru 
 verbatim;
-    [data_mat,data_header]=xlsread('data_peru_trimestral_corregida_1980Q1-2018Q1.xls',1,'G2:J154');
+    [data_mat,data_header]=xlsread('data_peru_trimestral.xls',1,'G2:J154');
     %sqrt(0.06*var(data_mat)); prior bounds
     figure('Name','Figure 5: Autocorrelation Function - Peru')
     tby_data=data_mat(:,strcmp('tb_y',data_header));
@@ -352,7 +352,7 @@ estimated_params_init(use_calibration); //Use their posterior as starting values
     @# endif
 end;
 
-estimation(datafile=data_peru_trimestral_corregida_1980Q1-2018Q1,
+estimation(datafile=data_peru_trimestral,
         xls_range=G2:J154, 
         loglinear,
         logdata, //data is already logged, loglinear option would otherwise log the data
@@ -363,12 +363,12 @@ estimation(datafile=data_peru_trimestral_corregida_1980Q1-2018Q1,
         mh_replic=100000,
         consider_only_observed
                 );
-% Plot some parameter draws to visually check how MCMC behaved        
-% trace_plot(options_,M_,estim_params_,'DeepParameter',1,'gbar');
-% trace_plot(options_,M_,estim_params_,'DeepParameter',1,'rho_g');
-% trace_plot(options_,M_,estim_params_,'StructuralShock',1,'eps_s');
-% trace_plot(options_,M_,estim_params_,'DeepParameter',1,'phi');
-% trace_plot(options_,M_,estim_params_,'MeasurementError',1,'g_invest');
+% % Plot some parameter draws to visually check how MCMC behaved        
+% % trace_plot(options_,M_,estim_params_,'DeepParameter',1,'gbar');
+% % trace_plot(options_,M_,estim_params_,'DeepParameter',1,'rho_g');
+% % trace_plot(options_,M_,estim_params_,'StructuralShock',1,'eps_s');
+% % trace_plot(options_,M_,estim_params_,'DeepParameter',1,'phi');
+% % trace_plot(options_,M_,estim_params_,'MeasurementError',1,'g_invest');
 
 
 fprintf('%30s \t %5s   \t %5s   \t %5s   \t %5s   \n',' ','g_y','g_c','g_inv','TB/Y')

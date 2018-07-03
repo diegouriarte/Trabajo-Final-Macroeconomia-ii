@@ -156,12 +156,6 @@ M_.param_nbr = 17;
 M_.orig_endo_nbr = 18;
 M_.aux_vars = [];
 M_.predetermined_variables = [ 2 5 ];
-options_.varobs = cell(1);
-options_.varobs(1)  = {'g_y'};
-options_.varobs(2)  = {'g_c'};
-options_.varobs(3)  = {'g_invest'};
-options_.varobs(4)  = {'tb_y'};
-options_.varobs_id = [ 11 12 13 10  ];
 M_.Sigma_e = zeros(5, 5);
 M_.Correlation_matrix = eye(5, 5);
 M_.H = 0;
@@ -218,7 +212,7 @@ M_.maximum_exo_lead = 0;
 oo_.exo_steady_state = zeros(5, 1);
 M_.params = NaN(17, 1);
 M_.NNZDerivatives = [76; -1; -1];
-M_.params( 10 ) = 1.009890776104921;
+M_.params( 10 ) = 1.001;
 gbar = M_.params( 10 );
 M_.params( 12 ) = 0.323027844166870;
 rho_g = M_.params( 12 );
@@ -234,7 +228,7 @@ M_.params( 14 ) = 0.906802888826967;
 rho_mu = M_.params( 14 );
 M_.params( 2 ) = 2;
 gamma = M_.params( 2 );
-M_.params( 3 ) = 0.1255088099999999;
+M_.params( 3 ) = 1.03;
 delta = M_.params( 3 );
 M_.params( 4 ) = 0.32;
 alpha = M_.params( 4 );
@@ -242,7 +236,7 @@ M_.params( 6 ) = 1.6;
 omega = M_.params( 6 );
 M_.params( 7 ) = 1.4*M_.params(6);
 theta = M_.params( 7 );
-M_.params( 1 ) = 0.9223681599999999;
+M_.params( 1 ) = 0.98;
 beta = M_.params( 1 );
 M_.params( 9 ) = 0.007;
 dbar = M_.params( 9 );
@@ -288,70 +282,6 @@ fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Stationary TFP:',[oo_.var
 fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Preference:',[oo_.variance_decomposition(strmatch('g_y',var_list_,'exact'),strmatch('eps_nu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_c',var_list_,'exact'),strmatch('eps_nu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_invest',var_list_,'exact'),strmatch('eps_nu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('tb_y',var_list_,'exact'),strmatch('eps_nu',M_.exo_names,'exact'))])
 fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Country Premium:',[oo_.variance_decomposition(strmatch('g_y',var_list_,'exact'),strmatch('eps_mu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_c',var_list_,'exact'),strmatch('eps_mu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_invest',var_list_,'exact'),strmatch('eps_mu',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('tb_y',var_list_,'exact'),strmatch('eps_mu',M_.exo_names,'exact'))])
 fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Ex. Spending:',[oo_.variance_decomposition(strmatch('g_y',var_list_,'exact'),strmatch('eps_s',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_c',var_list_,'exact'),strmatch('eps_s',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('g_invest',var_list_,'exact'),strmatch('eps_s',M_.exo_names,'exact')),oo_.variance_decomposition(strmatch('tb_y',var_list_,'exact'),strmatch('eps_s',M_.exo_names,'exact'))])    
-estim_params_.var_exo = [];
-estim_params_.var_endo = [];
-estim_params_.corrx = [];
-estim_params_.corrn = [];
-estim_params_.param_vals = [];
-estim_params_.param_vals = [estim_params_.param_vals; 10, NaN, NaN, NaN, 5, 1.015, 0.008660254037844397, 1, 1.03, NaN ];
-estim_params_.var_exo = [estim_params_.var_exo; 2, NaN, NaN, NaN, 5, 0.1, 0.05773502691896259, 0, 0.2, NaN ];
-estim_params_.param_vals = [estim_params_.param_vals; 12, NaN, NaN, NaN, 5, 0, (-0.5715767664977296), (-0.99), 0.99, NaN ];
-estim_params_.var_exo = [estim_params_.var_exo; 1, NaN, NaN, NaN, 5, 0.1, 0.05773502691896259, 0, 0.2, NaN ];
-estim_params_.param_vals = [estim_params_.param_vals; 11, NaN, NaN, NaN, 5, 0, (-0.5715767664977296), (-0.99), 0.99, NaN ];
-estim_params_.param_vals = [estim_params_.param_vals; 8, NaN, NaN, NaN, 5, 4, (-2.309401076758503), 0, 8, NaN ];
-estim_params_.var_exo = [estim_params_.var_exo; 3, NaN, NaN, NaN, 5, 0.5, 0.2886751345948129, 0, 1, NaN ];
-estim_params_.param_vals = [estim_params_.param_vals; 13, NaN, NaN, NaN, 5, 0, (-0.5715767664977296), (-0.99), 0.99, NaN ];
-estim_params_.var_exo = [estim_params_.var_exo; 5, NaN, NaN, NaN, 5, 0.1, 0.05773502691896259, 0, 0.2, NaN ];
-estim_params_.param_vals = [estim_params_.param_vals; 15, NaN, NaN, NaN, 5, 0, (-0.5715767664977296), (-0.99), 0.99, NaN ];
-estim_params_.var_exo = [estim_params_.var_exo; 4, NaN, NaN, NaN, 5, 0.1, 0.05773502691896259, 0, 0.2, NaN ];
-estim_params_.param_vals = [estim_params_.param_vals; 14, NaN, NaN, NaN, 5, 0, (-0.5715767664977296), (-0.99), 0.99, NaN ];
-estim_params_.param_vals = [estim_params_.param_vals; 5, NaN, NaN, NaN, 5, 2.5, (-1.443375672974065), 0, 5, NaN ];
-estim_params_.var_endo = [estim_params_.var_endo; 11, NaN, NaN, NaN, 5, 0.1852775637731995, 0.1011965486273585, 0.01, 0.360555127546399, NaN ];
-estim_params_.var_endo = [estim_params_.var_endo; 12, NaN, NaN, NaN, 5, 0.2229449471770336, 0.122943822575231, 0.01, 0.4358898943540673, NaN ];
-estim_params_.var_endo = [estim_params_.var_endo; 13, NaN, NaN, NaN, 5, 0.3620714214271425, 0.2032685299349349, 0.01, 0.714142842854285, NaN ];
-estim_params_.var_endo = [estim_params_.var_endo; 10, NaN, NaN, NaN, 5, 0.1852775637731995, 0.1011965486273585, 0.01, 0.360555127546399, NaN ];
-options_.use_calibration_initialization = 1;
-tmp1 = find(estim_params_.var_endo(:,1)==11);
-estim_params_.var_endo(tmp1,2) = 0.01071735077031633;
-tmp1 = find(estim_params_.var_endo(:,1)==12);
-estim_params_.var_endo(tmp1,2) = 0.0114219437109014;
-tmp1 = find(estim_params_.var_endo(:,1)==13);
-estim_params_.var_endo(tmp1,2) = 0.03790189915876248;
-tmp1 = find(estim_params_.var_endo(:,1)==10);
-estim_params_.var_endo(tmp1,2) = 0.01047148834975239;
-options_.logdata = 1;
-options_.loglinear = 1;
-options_.mh_nblck = 1;
-options_.mh_replic = 100000;
-options_.mode_check.status = 1;
-options_.mode_compute = 6;
-options_.moments_varendo = 1;
-options_.datafile = 'data_peru_trimestral';
-options_.endo_vars_for_moment_computations_in_estimation = 'only_observed_variables';
-options_.xls_range = 'G2:J154';
-options_.order = 1;
-var_list_ = char();
-oo_recursive_=dynare_estimation(var_list_);
-Plot some parameter draws to visually check how MCMC behaved        
-trace_plot(options_,M_,estim_params_,'DeepParameter',1,'gbar');
-trace_plot(options_,M_,estim_params_,'DeepParameter',1,'rho_g');
-trace_plot(options_,M_,estim_params_,'StructuralShock',1,'eps_s');
-trace_plot(options_,M_,estim_params_,'DeepParameter',1,'phi');
-trace_plot(options_,M_,estim_params_,'MeasurementError',1,'g_invest');
-fprintf('%30s \t %5s   \t %5s   \t %5s   \t %5s   \n',' ','g_y','g_c','g_inv','TB/Y')
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Standard Deviations:',[sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_y),sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_c.g_c),sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_invest.g_invest),sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.tb_y.tb_y)]*100)
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Correlation with g_y:',[oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_y/(sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_y)*sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_y)),oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_c/(sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_y)*sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_c.g_c)),oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_invest/(sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_y)*sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_invest.g_invest)),oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.tb_y/(sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_y)*sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.tb_y.tb_y))])
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','First Order Autocorr.:',[oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_y.g_y(1),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_c.g_c(1),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_invest.g_invest(1),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.tb_y.tb_y(1)])
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Second Order Autocorr.:',[oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_y.g_y(2),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_c.g_c(2),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_invest.g_invest(2),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.tb_y.tb_y(2)])
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Third Order Autocorr.:',[oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_y.g_y(3),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_c.g_c(3),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_invest.g_invest(3),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.tb_y.tb_y(3)])
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Fourth Order Autocorr.:',[oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_y.g_y(4),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_c.g_c(4),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.g_invest.g_invest(4),oo_.PosteriorTheoreticalMoments.dsge.correlation.Mean.tb_y.tb_y(4)])
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Correlation with TB/Y:',[oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.tb_y/(sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.tb_y.tb_y)*sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_y.g_y)),oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_c.tb_y/(sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.tb_y.tb_y)*sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_c.g_c)),oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_invest.tb_y/(sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.tb_y.tb_y)*sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.g_invest.g_invest)),oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.tb_y.tb_y/(sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.tb_y.tb_y)*sqrt(oo_.PosteriorTheoreticalMoments.dsge.covariance.Mean.tb_y.tb_y))])
-fprintf('%30s \t %5s   \t %5s   \t %5s   \t %5s   \n',' ','g_y','g_c','g_inv','TB/Y')
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Non-stationary TFP:',[oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_y.eps_g,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_c.eps_g,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_invest.eps_g,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.tb_y.eps_g]*100)
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Stationary TFP:',[oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_y.eps_a,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_c.eps_a,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_invest.eps_a,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.tb_y.eps_a]*100)
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Preference:',[oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_y.eps_nu,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_c.eps_nu,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_invest.eps_nu,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.tb_y.eps_nu]*100)
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Country Premium:',[oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_y.eps_mu,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_c.eps_mu,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_invest.eps_mu,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.tb_y.eps_mu]*100)
-fprintf('%30s \t %5.4f \t %5.4f \t %5.4f \t %5.4f \n','Ex. Spending:',[oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_y.eps_s,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_c.eps_s,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.g_invest.eps_s,oo_.PosteriorTheoreticalMoments.dsge.VarianceDecomposition.Mean.tb_y.eps_s]*100)    
 save('GarciaCicco_et_al_2010_results.mat', 'oo_', 'M_', 'options_');
 if exist('estim_params_', 'var') == 1
   save('GarciaCicco_et_al_2010_results.mat', 'estim_params_', '-append');
