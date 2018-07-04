@@ -2,7 +2,7 @@
 
 
 ## Eviews
-Contiene el código para calcular hechos estilizados de la Economía Peruana siguiendo a Castillo, Montoro y Tuesta. El 
+Contiene el código para calcular hechos estilizados de la Economía Peruana siguiendo a Castillo, Montoro y Tuesta.
 
 ## Data BCR
 Contiene las series de tiempo que llama Eviews para realizar los análisis
