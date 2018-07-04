@@ -1,4 +1,4 @@
-function y = GarciaCicco_et_al_2010_set_auxiliary_variables(y, x, params)
+function y = SGU_2003_set_auxiliary_variables(y, x, params)
 %
 % Status : Computes static model for Dynare
 %
