@@ -2,12 +2,11 @@ close @all
 
 
 'importamos datos del pbi
-wfopen "C:\Users\diego\Dropbox\projects\Maestría\Ciclo 3\Macroeconomía II\Trabajo Final\Data BCR\serie_pbi.csv" ftype=ascii rectype=crlf skip=1 fieldtype=delimited delim=comma colhead=1 namepos=custom colheadnames=("Description") names=(periodo,pbi) eoltype=pad badfield=NA @freq Q 1980Q1 @smpl @all
+wfopen "..\Data BCR\serie_pbi.csv" ftype=ascii rectype=crlf skip=1 fieldtype=delimited delim=comma colhead=1 namepos=custom colheadnames=("Description") names=(periodo,pbi) eoltype=pad badfield=NA @freq Q 1980Q1 @smpl @all
 
 'importamos datos de consumo, inversion, exportaciones e importaciones
-wfopen "C:\Users\diego\Dropbox\projects\Maestría\Ciclo 3\Macroeconomía II\Trabajo Final\Data BCR\serie_c_i_x_m.csv" ftype=ascii rectype=crlf skip=1 fieldtype=delimited delim=comma colhead=1 namepos=custom colheadnames=("Description") names=(periodo,Consumo_privado,Consumo_publico,Inversionprivada,Inversionpublica,Exportaciones,Importaciones) eoltype=pad badfield=NA @freq Q 1980Q1 @smpl @all
+wfopen "..\Data BCR\serie_c_i_x_m.csv" ftype=ascii rectype=crlf skip=1 fieldtype=delimited delim=comma colhead=1 namepos=custom colheadnames=("Description") names=(periodo,Consumo_privado,Consumo_publico,Inversionprivada,Inversionpublica,Exportaciones,Importaciones) eoltype=pad badfield=NA @freq Q 1980Q1 @smpl @all
 copy SERIE_PBI::SERIE_PBI\PBI *
-wfclose "c:\users\diego\dropbox\projects\maestría\ciclo 3\macroeconomía ii\trabajo final\eviews\serie_pbi.wf1"
 
 'colocamos las fechas de inicio y fin
 
